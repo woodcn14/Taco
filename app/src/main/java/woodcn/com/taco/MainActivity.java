@@ -8,10 +8,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button eatToyButton;
+    private TextView eatToyTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +21,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         eatToyButton = (Button) findViewById(R.id.eat_toy_button);
+        eatToyTextView = (TextView) findViewById(R.id.eat_toy_text_view);
         setSupportActionBar(toolbar);
 
         eatToyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 toolbar.setBackgroundColor(ContextCompat.getColor(getBaseContext(), R.color.pink));
+                eatToyTextView.setText("Taco eats the toy");
             }
         });
 
